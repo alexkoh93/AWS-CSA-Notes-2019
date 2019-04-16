@@ -41,21 +41,34 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 ### Storage Tiers
 
 - **S3 (Normal)**
-	- 99.99% availability, 99.(11 9’s )
+	- 99.99% availability, 99.(11 9’s ) durability
 	- durable, reliable - stored redundantly across multiple devices in multiple facilities and is designed to sustain the loss of 2 facilities concurrently
 
 - **S3 IA (Infrequent Access)**
 	- Used for data that is accessed less frequently but requires rapid access when needed
 	- Lower fee than S3 but, are charged a retrieval fee
+	
+- **S3 One Zone - IA**
+	- Lower-cost option for infrequently accessed data
+	- Do not require the multiple Availability Zone data resilience.
 
+- **S3-Intelligent Tiering**
+	- Designed to optimize costs by automatically moving data to the most cost-effective access tier
+	- Without performance impact or operational overhead.
+	
+	
 - **S3 Reduces Redundancy Storage (RRS)** 
 	- Designed to provide 99.99% durability and 99.99% availability of objects over a given year.
 
-- **Glacier (Separate product from S3)**
+- **S3 Glacier (Separate product from S3)**
 	- Very cost effective but used for data archival only
 	- Generally takes 3 - 5 hours to restore from glacier
     - Stores data for as low as .01G a month
-    - Optimized for data that is infrequently accessed and for which retrieval times of 3 to 5 hours are suitable (slow retrieval).
+    - Optimized for data that is infrequently accessed and for which retrieval times from minutes to 3/5 hours are suitable (slow retrieval).
+    
+- **S3 Glacier Deep Archive**
+	- S3's lowerest=cost storage class
+	- Retrieval time of 12 hours is acceptable.
 
 ### S3 Charges
 
@@ -64,6 +77,7 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 - Storage Management Pricing
 - Data transfer pricing
 - Transfer Acceleration
+- Cross Region Replicaiton Pricing
 
 #### Transfer Acceleration
 
